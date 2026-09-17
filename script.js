@@ -189,7 +189,10 @@ function setLanguage(lang) {
     
     // Update button text
     const currentLangText = document.getElementById('current-lang');
-    if (currentLangText) currentLangText.textContent = lang.toUpperCase();
+    if (currentLangText) {
+        const flagMap = { fr: '🇫🇷', en: '🇬🇧', de: '🇩🇪', zh: '🇨🇳' };
+        currentLangText.textContent = flagMap[lang] || '🌐';
+    }
     
     // Document title
     if (translations[lang]['doc_title']) {
