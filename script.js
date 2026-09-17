@@ -150,23 +150,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- i18n Logic ---
-    const langSwitch = document.getElementById('lang-switch');
+    const langBtn = document.getElementById('lang-btn');
+    const langDropdown = document.getElementById('lang-dropdown');
+    const currentLangText = document.getElementById('current-lang');
+    const langOptions = document.querySelectorAll('#lang-dropdown a');
     
     // Set initial language from localStorage or default to 'fr'
     const savedLang = localStorage.getItem('pinctada_lang') || 'fr';
-    langSwitch.value = savedLang;
     setLanguage(savedLang);
 
-    // Event listener for dropdown change
-    langSwitch.addEventListener('change', (e) => {
-        const newLang = e.target.value;
-        setLanguage(newLang);
-        localStorage.setItem('pinctada_lang', newLang);
+    // Toggle dropdown
+    langBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langDropdown.classList.toggle('show');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', () => {
+        if (langDropdown.classList.contains('show')) {
+            langDropdown.classList.remove('show');
+        }
+    });
+
+    // Handle language selection
+    langOptions.forEach(option => {
+        option.addEventListener('click', (e) => {
+            e.preventDefault();
+            const newLang = option.getAttribute('data-lang');
+            setLanguage(newLang);
+            localStorage.setItem('pinctada_lang', newLang);
+            langDropdown.classList.remove('show');
+        });
     });
 });
 
 function setLanguage(lang) {
     if (!translations[lang]) return;
+    
+    // Update button text
+    const currentLangText = document.getElementById('current-lang');
+    if (currentLangText) currentLangText.textContent = lang.toUpperCase();
     
     // Document title
     if (translations[lang]['doc_title']) {
