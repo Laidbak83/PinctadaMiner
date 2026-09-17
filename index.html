@@ -73,26 +73,104 @@
 
         <section id="features" class="features container">
             <div class="section-header fade-in">
-                <h2 data-i18n="feat_title">Architecture de Pointe</h2>
-                <p data-i18n="feat_subtitle">Construit pour l'efficacité absolue et conçu sur-mesure pour les GPUs NVIDIA Ampere et Ada Lovelace.</p>
+                <h2 data-i18n="feat_title">Fonctionnalités Next-Gen</h2>
+                <p data-i18n="feat_subtitle">L'arsenal ultime pour maximiser votre rentabilité et dominer le réseau PearlHash.</p>
             </div>
             
             <div class="feature-grid">
                 <div class="feature-card glass-card fade-in-up" style="transition-delay: 100ms;">
                     <div class="feature-icon">⚡</div>
-                    <h3 data-i18n="feat1_title">Double-Buffering Asynchrone</h3>
-                    <p data-i18n="feat1_desc">Le pipeline E2E masque 100% de la latence PCIe. Pendant que le GPU calcule le batch N, le CPU rapatrie les résultats du batch N-1 en mémoire verrouillée (Pinned Host Memory).</p>
+                    <h3 data-i18n="feat1_title">Éco-Minage (Méthode Rigel)</h3>
+                    <p data-i18n="feat1_desc">Verrouillage de la VRAM à 810MHz via NVML. Économisez de 20 à 45W par carte pour pousser vos Tensor Cores au maximum sans surconsommer.</p>
                 </div>
                 <div class="feature-card glass-card fade-in-up" style="transition-delay: 200ms;">
-                    <div class="feature-icon">🧠</div>
-                    <h3 data-i18n="feat2_title">L2 Cache Pinning</h3>
-                    <p data-i18n="feat2_desc">Politique L2 persistante (cudaAccessPropertyPersisting) activée sur les architectures compatibles pour conserver les matrices A et B au plus près des cœurs de calcul, évitant les allers-retours VRAM coûteux.</p>
+                    <div class="feature-icon">🔄</div>
+                    <h3 data-i18n="feat2_title">Auto-Switch FP8 (Certificate-v4)</h3>
+                    <p data-i18n="feat2_desc">Prêt pour le Hard Fork (PR #311). Bascule automatique à chaud du noyau V3 au FP8 sans intervention humaine ni perte de session.</p>
                 </div>
                 <div class="feature-card glass-card fade-in-up" style="transition-delay: 300ms;">
-                    <div class="feature-icon">🎯</div>
-                    <h3 data-i18n="feat3_title">Tiled-32x8 Candidate Order</h3>
-                    <p data-i18n="feat3_desc">Le parcours mémoire des noyaux v12d et v8c a été redessiné pour une localité registre maximale, optimisant le warp-level caching et réduisant la pression mémoire.</p>
+                    <div class="feature-icon">🛡️</div>
+                    <h3 data-i18n="feat3_title">Disjoncteur Anti-Rejet</h3>
+                    <p data-i18n="feat3_desc">Finis les rigs qui tournent dans le vide. Coupure immédiate du calcul si les rejets dépassent 5% et envois d'alertes Webhook.</p>
                 </div>
+                <div class="feature-card glass-card fade-in-up" style="transition-delay: 400ms;">
+                    <div class="feature-icon">🐧</div>
+                    <h3 data-i18n="feat4_title">Débridage CMP Linux</h3>
+                    <p data-i18n="feat4_desc">Levée automatique des verrous de pilotes sur la gamme NVIDIA CMP (40HX à 170HX). Rentabilisez vos cartes d'occasion instantanément.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing container">
+            <div class="section-header fade-in">
+                <h2 data-i18n="pricing_title">Stratégie & Frais</h2>
+                <p data-i18n="pricing_subtitle">Le meilleur modèle économique du marché. Clair, net et dégressif.</p>
+            </div>
+            <div class="pricing-cards">
+                <div class="pricing-card glass-card fade-in-up" style="transition-delay: 100ms;">
+                    <h3 data-i18n="pricing1_title">Lancement</h3>
+                    <div class="price">0%</div>
+                    <p data-i18n="pricing1_desc">Pendant 30 jours, PinctadaMiner est 100% gratuit. Testez l'efficience énergétique sur vos rigs sans aucun frais.</p>
+                </div>
+                <div class="pricing-card glass-card fade-in-up highlight" style="transition-delay: 200ms;">
+                    <h3 data-i18n="pricing2_title">Dev-Fee Standard</h3>
+                    <div class="price">1.0%</div>
+                    <p data-i18n="pricing2_desc">Deux fois moins cher que PeakMiner ou ForgeMiner. Des logs clairs et transparents, sans frais cachés.</p>
+                </div>
+                <div class="pricing-card glass-card fade-in-up" style="transition-delay: 300ms;">
+                    <h3 data-i18n="pricing3_title">Grandes Fermes</h3>
+                    <div class="price">0.5%</div>
+                    <p data-i18n="pricing3_desc">Tarif dégressif automatique : 0.75% au-delà de 500 TH/s, et 0.5% pour les fermes industrielles (> 2 PH/s).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="comparison" class="comparison container">
+            <div class="section-header fade-in">
+                <h2 data-i18n="comp_title">Comparatif Concurrentiel</h2>
+            </div>
+            <div class="table-container glass-card fade-in-up">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="comp_col1">Fonctionnalité</th>
+                            <th>PinctadaMiner</th>
+                            <th>PeakMiner</th>
+                            <th>ForgeMiner</th>
+                            <th>KRig</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-i18n="comp_row1">Frais Développeur (Dev-Fee)</td>
+                            <td class="highlight-cell">1.0% (Dégressif)</td>
+                            <td>2.0%</td>
+                            <td>2.0%</td>
+                            <td>0.0% (Bloqué Kryptex)</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="comp_row2">Verrouillage VRAM Auto</td>
+                            <td class="highlight-cell">✅ Intégré</td>
+                            <td>❌ Externe</td>
+                            <td>❌ Externe</td>
+                            <td>❌ Externe</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="comp_row3">Disjoncteur Anti-Rejet</td>
+                            <td class="highlight-cell">✅ Oui</td>
+                            <td>❌ Non</td>
+                            <td>❌ Non</td>
+                            <td>❌ Non</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="comp_row4">Bascule FP8 (v4) Auto</td>
+                            <td class="highlight-cell">✅ Oui</td>
+                            <td>⚠️ En Beta</td>
+                            <td>❌ Non</td>
+                            <td>❌ Non</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
